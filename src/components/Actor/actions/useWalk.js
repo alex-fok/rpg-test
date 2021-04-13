@@ -15,8 +15,8 @@ const useWalk = (initPos={ x:0, y:0 }, map) => {
         x: prev.x + movements[dir].x,
         y: prev.y + movements[dir].y
       }
-      const isBoundry = next.x < 0 || next.x > mapSize.x - 1 || next.y < 0 || next.y > mapSize.y - 1;
-      if (isBoundry) return prev;
+      const isBoundary = next.x < 0 || next.x > mapSize.x - 1 || next.y < 0 || next.y > mapSize.y - 1;
+      if (isBoundary) return prev;
       
       const isWall = map[next.y][next.x] === 1;
       return isWall ? prev: next
